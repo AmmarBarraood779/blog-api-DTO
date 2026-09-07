@@ -1,58 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
+
+# ⚡ Blog API — Clean Architecture & AI Moderation
+
+### واجهة برمجية فائقة الأداء مبنية وفق معمارية برمجية متقدمة وتدقيق آلي ذكي
+
+[![CI Pipeline](https://img.shields.io/github/actions/workflow/status/AmmarBarraood779/blog-api-DTO/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI%20Pipeline)](https://github.com/AmmarBarraood779/blog-api-DTO/actions)
+[![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![Google Gemini](https://img.shields.io/badge/Gemini%20AI-Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
+[![Redis](https://img.shields.io/badge/Redis-Queue%20Engine-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io)
+[![Code Style](https://img.shields.io/badge/Pint-PSR--12-success?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com/docs/pint)
+
+<br/>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <b>Enterprise-Grade RESTful API</b> صُممت لعزل منطق العمل وتطبيق مبادئ هندسة البرمجيات النظيفة <b>(Clean Architecture)</b> عبر نمطي <b>DTOs</b> و <b>Actions</b>، مدعومة بمحرك تدقيق ذكي للمحتوى غير متزامن <b>(Asynchronous AI Moderation)</b> عبر <b>Google Gemini</b> و <b>Redis</b> لضمان سرعة استجابة لا تتجاوز أجزاء من الثانية.
 </p>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 💎 أبرز ما يميز النظام (Core Highlights)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Clean Architecture & Separation of Concerns:** التخلص التام من منطق الأعمال داخل الـ Controllers وتحويلها إلى `Thin Controllers` عبر نمطي DTO و Action Classes.
+* **Asynchronous AI Pipeline (Zero-Latency Impact):** عزل فحص المحتوى بالذكاء الاصطناعي (الذي يستغرق 2-3 ثوانٍ) في طابور خلفي مستقل على Redis؛ يحصل العميل على رد `201 Created` خلال **أقل من 100ms**.
+* **Structured AI Response:** إجبار نموذج Gemini على إنتاج مخرجات JSON محددة ومطابقة لنمط `HasStructuredOutput` لضمان دقة اتخاذ القرار آلياً (`approved` أو `rejected`).
+* **CI/CD Automation:** خط أنابيب آلي عبر GitHub Actions يختبر الكود، ويفحص التنسيق بـ Pint، ويشغّل خدمات MySQL و Redis مع كل عملية دفع أو دمج.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🏛️ دورة حياة الطلب والنمط المعماري (Architectural Flow)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+تم تصميم تدفق البيانات وفق خط سير أحادي الاتجاه يمنع الاعتماد المتبادل ويحقق أقصى درجات الأمان النوعي (**Type Safety**):
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```text
+  [ Client Request ]
+          │
+          ▼
+┌─────────────────────────┐
+│   StoreCommentRequest   │  ──► Validation Rules & Authorization
+└──────────┬──────────────┘
+           │  $request->toDTO($post->id)
+           ▼
+┌─────────────────────────┐
+│    CreateCommentDTO     │  ──► Readonly / Immutable / Strict Types
+└──────────┬──────────────┘
+           │  execute($user, $dto)
+           ▼
+┌─────────────────────────┐
+│    AddCommentAction     │  ──► Single Responsibility Business Logic
+└─────┬──────────────┬────┘
+      │              │
+      │              ▼
+      │      ┌─────────────────────────┐
+      │      │   ModerateCommentJob    │  ──► Dispatched to Redis ('moderation' queue)
+      │      └──────────┬──────────────┘
+      │                 │
+      │                 ▼
+      │      ┌─────────────────────────┐
+      │      │ CommentModerator Agent  │  ──► Google Gemini Flash (Structured JSON)
+      │      └──────────┬──────────────┘
+      │                 │
+      │                 ▼
+      │      ┌─────────────────────────┐
+      │      │    Database Update      │  ──► status: approved | rejected + reason
+      │      └─────────────────────────┘
+      ▼
+┌─────────────────────────┐
+│     CommentResource     │  ──► JSON Formatting & Entity Transformation
+└──────────┬──────────────┘
+           │
+           ▼
+     [ HTTP 201 ] (Immediate Response to Client)
